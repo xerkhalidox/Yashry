@@ -1,0 +1,37 @@
+{% extends 'core/general/base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'user/css/registerstyle.css' %}">
+{% endblock style %}
+
+{% block title %}
+Create Account - Yashry
+{% endblock title %}
+
+{% block sale %}
+{% endblock sale %}
+
+{% block content %}
+    <p class="title">Create Account</p>
+    <div class="container">
+        <div class="btn-container">
+            <a href="{% provider_login_url "facebook" method="oauth2" %}">
+                <p class="facebook">
+                    Sign in with Facebook
+                </p>
+            </a>
+            <a href="{%  provider_login_url 'google' %}">
+                <p class="google"> 
+                    Sign in with Google
+                </p>
+            </a>
+        </div>
+        <p style="text-align:center;font-size:1.5em;margin-bottom:1%;"> Or </p>
+        <form action="register" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+{% endblock content %}

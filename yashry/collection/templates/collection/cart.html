@@ -1,0 +1,56 @@
+{% extends 'core/general/base.html' %}
+{% load static %}
+
+{% block sale %}
+{% endblock sale %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'collection/css/cartstyle.css' %}">
+{% endblock style %}
+
+{% block title %}
+Your Shopping Cart - Yashry
+{% endblock title %}
+
+{% block content %}
+<p class="title">Shopping Cart</p>
+<ul>
+    <li>
+        <div class="container">
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
+        </div>
+    </li>
+    {% if request.session.session_key %}
+        {% for key,value in request.session.product_name %}
+            <li class="display-flex">
+                <img src="{% static 'collection/imgs/shirt.jpg' %}"/>
+                <div class="cart-items-info">
+                    <p id="product_name">{{value.name}}</p>
+                    <p>Color: {{value.color}}</p>
+                    <p>Size: {{value.size}}</p>
+                </div>
+                <div class="price">
+                    <p class>LE {{value.price}}</p>
+                </div>
+                <div class="quantity">
+                    <p class>{{value.quantity}}</p>
+                    <button class="delete_item">Delete</button>
+                </div>
+                <div class="total">
+                    <p class>LE {{value.total}}</p>
+                </div> 
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>
+<p id="subtotal">
+    Subtotal:<span id="subtotal-value">LE 1500{{subtotal}}<span>
+</p>
+<button id="checkout-btn">
+    Check Out
+</button>
+<script src="{% static 'collection/js/delete_item.js' %}"></script>
+{% endblock content %}

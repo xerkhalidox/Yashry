@@ -1,0 +1,54 @@
+.product {
+  display: flex;
+}
+.product img {
+  width: 35%;
+  margin: 5% 20%;
+}
+.product-info {
+  margin-top: 5%;
+  margin-left: -18%;
+}
+.brand {
+  font-size: 1.6em;
+  padding-bottom: 1%;
+}
+.product-name {
+  font-size: 1.2em;
+  color: gray;
+  padding-bottom: 1%;
+}
+.product-info p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
+}
+.price {
+  color: #cd201a;
+  font-size: 1.5em;
+  padding-bottom: 1%;
+}
+.gender {
+  font-size: 1em;
+  font-weight: bold;
+  color: #212b36;
+}
+.quantity {
+  width: 25%;
+  height: 8vh;
+  text-indent: 5px;
+  margin-top: 2%;
+}
+
+input[type="submit"] {
+  margin-top: 3%;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  background-color: #212b36;
+  height: 8vh;
+  border: solid 1px #212b36;
+}
+
+input[type="submit"]:hover {
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}

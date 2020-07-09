@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/basestyle.css' %}">
+    <link rel="icon" href="//cdn.shopify.com/s/files/1/0176/5061/4372/files/fav-icon_c2efe27f-7e4f-4af9-a93a-403944086ffa_32x32.png?v=1589400966" type="image/png">
+    {% block style %}
+    {% endblock style %}
+    <title>
+        {% block title %}{% endblock  %}
+    </title>
+</head>
+<body>
+<header class="header-container">
+    <div class="header-items"> <a href="{% url 'index' %}"> <img
+        class="logo"
+        src="{% static 'core/imgs/logo.png' %}"
+        alt="logo"
+      /></a>
+      <div class="icons">
+        <a href="#"> <img class="icon" src="{% static 'core/imgs/user.png' %} " alt="user profile" /></a>
+        <a href="#"><img class="icon" src="{% static 'core/imgs/search.png' %} " alt="searcher" /></a>
+        <a href="#"><img class="icon" src="{% static 'core/imgs/cart.png' %} " alt="cart" /></a>
+    </div>
+    </div>
+    </header>
+    <div class="store-messages-bar">
+        <p>Cash on Delivery</p>
+        <p>14 Days Free Return</p>
+        <p>100% Genuine Brands</p>
+    </div>
+    
+    {% block sale %}
+        <div class="sale">
+            <img src="{% static 'core/imgs/sale.gif' %}" alt="">
+        </div>
+    {% endblock sale %} 
+
+{% block content %}
+{% endblock content %}
+<footer>
+    <nav class="footer-nav">
+        <div class="nav-links">
+            <ul>
+                <li id="test"><a href="#">About us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="social-media-links">
+            <p>Follow us</p>
+            <ul>
+                <li><a href="#"><img src="{% static 'core/imgs/insta-icon.png' %}"></a></li>
+                <li><a href="#"><img src="{% static 'core/imgs/fb-icon.png' %}"></a></li>
+            </ul>
+        </div>
+    </nav>
+</footer>
+</body>
+</html>

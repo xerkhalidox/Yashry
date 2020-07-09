@@ -1,0 +1,53 @@
+{% extends 'core/general/base.html' %}
+{% load static %}
+
+{% block title %}   
+    {{product.name}}
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'collection/css/productstyle.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+{% endblock style %}
+
+{% block sale %}
+{% endblock sale %}
+
+{% block content %}
+    <div class="product">
+        <img src="{% static 'collection/imgs/shirt.jpg' %}" alt="">
+        <div class="product-info">
+            <p class="brand">{{brand}}</p>
+            <p class="product-name">{{name}}</p>
+            <p class="price">LE {{price}}</p>
+            <p class="gender">Gender: {{gender}}</p>
+            <form action="{% url 'cart' %}" method="POST">
+            {% csrf_token %}
+                <div>
+                {% for size in sizes %}
+                    <div class="form-check form-check-inline">
+                        <input name="size" class="form-check-input" type="checkbox" id="inlineCheckbox1" value={{size.size}}>
+                        <label class="form-check-label" for="inlineCheckbox1">{{size.size}}</label>
+                    </div>
+                {% endfor %}
+                </div>  
+                <div>
+                {% for color in colors %}
+                    <div class="form-check form-check-inline">
+                        <input name="color" class="form-check-input" type="checkbox" id="inlineCheckbox1" value={{color.color}}>
+                        <label class="form-check-label" for="inlineCheckbox1">{{color.color}}</label>
+                    </div>
+                {% endfor %}
+                </div>  
+                <input required name="quantity" class="quantity" type="text" name="quantity" placeholder="Quantity"> 
+                <input name="name" value={{name}} hidden>
+                <input name="price" value={{price}} hidden>
+                <input type="submit" value="Add to Cart"> 
+            </form>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+{% endblock content %}

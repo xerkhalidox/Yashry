@@ -1,0 +1,106 @@
+html,
+body {
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 100%;
+  margin: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+.header-container {
+  display: table-row;
+  background-color: #fff;
+}
+.logo {
+  width: 10%;
+}
+
+.header-items {
+  padding: 1% 2%;
+}
+.icon {
+  width: 3%;
+  padding-right: 2%;
+}
+.icons {
+  display: inline;
+  padding-left: 72%;
+}
+.store-messages-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.store-messages-bar {
+  background-color: #eee;
+  padding: 1% 10%;
+}
+.sale img {
+  width: 100%;
+  margin-top: 4%;
+}
+footer {
+  display: table-row;
+  background-color: #eee;
+}
+
+.footer-nav {
+  padding-top: 2%;
+}
+footer li {
+  display: inline;
+}
+.nav-links ul {
+  float: left;
+  width: 45%;
+}
+.social-media-links {
+  float: right;
+}
+.social-media-links img {
+  width: 10%;
+}
+.social-media-links a {
+  margin-left: -8%;
+}
+.nav-links li {
+  padding-left: 2%;
+}
+
+li a {
+  clear: both;
+  color: #212b36;
+}
+@media only screen and (max-width: 768px) {
+  .header-container {
+    height: 5vh;
+  }
+  .logo {
+    padding-left: 2%;
+    width: 23%;
+  }
+  .header-items {
+    padding-top: 3%;
+  }
+  .icon {
+    width: 7%;
+  }
+  .icons {
+    padding-left: 40%;
+  }
+  footer {
+    margin-top: 4%;
+    height: 30vh;
+  }
+  footer li {
+    display: block;
+  }
+  .nav-links li {
+    padding-top: 2%;
+  }
+}

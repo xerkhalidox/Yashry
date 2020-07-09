@@ -1,0 +1,40 @@
+{% extends 'core/general/base.html' %}
+{% load static %}
+{% load socialaccount  %}
+{% block title %}
+Log In
+{% endblock title %}
+
+{% block style %}
+  <link rel="stylesheet" href={% static 'user/css/registerstyle.css' %}>
+{% endblock style %}
+  
+
+{% block sale %}
+{# none #}
+{% endblock sale %}
+
+{% block content %}
+<p class="title">Login using</p>
+    <div class="container">
+        <div class="btn-container">
+            <a href="{% provider_login_url "facebook" method="oauth2" %}">
+                <p class="facebook">
+                    Sign in with Facebook
+                </p>
+            </a>
+            <a href="{%  provider_login_url 'google' %}">
+                <p class="google"> 
+                    Sign in with Google
+                </p>
+            </a>
+        </div>
+        <p style="text-align:center;font-size:1.5em;margin-bottom:1%;"> Or </p>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+{% endblock content %}

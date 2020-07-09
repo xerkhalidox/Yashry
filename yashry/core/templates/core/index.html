@@ -1,0 +1,15 @@
+{% extends 'core/general/base.html' %} 
+{% load static %}
+
+{% block content %}
+<p style="font-size: 1.25em;text-align: center;margin-top: 2%; letter-spacing: 1px;">YOUR #1 FASHION STORE FOR WOMEN, MEN AND KIDS IN EGYPT</p>
+<p style="font-size: 0.81em; text-align: center; letter-spacing: 1px;margin-top: 0.3%;">
+  Wide range of high quality yet stylish fashion clothes, bags, shoes, and more
+</p>
+<div style="margin-top: 1%; overflow: hidden;">
+<a href="{% url 'womenpage' %}"><img style="margin-top: 2%;"src="{% static 'core/imgs/Women-web.png' %}" alt="women collections"></a>
+<a href="{% url 'menpage' %}"><img style="margin-top: 2%;"src="{% static 'core/imgs/Men-web.png' %}" alt="men collections"></a>
+<a href="{% url 'kidspage' %}"><img style="margin-top:2%"src="{% static 'core/imgs/Kids-web.png' %}" alt="kids collections"></a>
+</div>
+</br>
+{% endblock content %}

@@ -1,0 +1,116 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.title {
+  text-align: center;
+  line-height: 4;
+  font-size: 1.5em;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 97%;
+  height: 10vh;
+  border-top: solid 1px #e8e9ea;
+  border-bottom: solid 1px #e8e9ea;
+  margin-left: 2%;
+}
+
+.container p:nth-child(2) {
+  padding-left: 49%;
+}
+.container p:nth-child(3) {
+  padding-left: 15%;
+}
+.container p:nth-child(4) {
+  padding-left: 15%;
+}
+
+.display-flex {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+}
+
+.display-flex img {
+  width: 15%;
+  float: left;
+}
+.cart-items-info,
+.price,
+.quantity,
+.total {
+  color: rgb(33, 43, 54);
+}
+.cart-items-info {
+  padding-left: 2%;
+  min-width: 31%;
+}
+.cart-items-info p:nth-child(2), /*color and size*/
+.cart-items-info p:nth-child(3) {
+  font-size: 0.87em;
+  color: rgba(33, 43, 54, 0.7);
+  padding-top: 0.3%;
+}
+.price {
+  margin-left: 9%;
+}
+.quantity {
+  margin-left: 16%;
+}
+.total {
+  margin-left: 14.3%;
+}
+.delete_item {
+  padding: 15% 15%;
+  margin-left: -30%;
+  margin-top: 10%;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 0.25em;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.delete_item:hover {
+  background-color: #b41222;
+}
+ul {
+  border-bottom: solid 1px #e8e9ea;
+  margin-bottom: 2%;
+}
+#subtotal {
+  font-size: 1.5em;
+  padding: 1% 27%;
+  margin-bottom: 1%;
+  color: #212b36;
+}
+#subtotal-value {
+  font-size: 1.5em;
+  padding-left: 10%;
+}
+#checkout-btn {
+  margin-left: 65%;
+  margin-bottom: 2%;
+  padding: 1% 12%;
+  background-color: #212b36;
+  border-color: #212b36;
+  border: transparent 1px solid;
+  color: #fff;
+  font-size: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+#checkout-btn:hover {
+  background-color: #fff;
+  color: #212b36;
+  border: solid 1px #9c9ea0;
+}
